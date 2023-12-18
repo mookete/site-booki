@@ -18,35 +18,51 @@ body {
     justify-content: center;
 }
 
-.main-container {
-    width: 100%;
-    max-width: 1440px;
-    padding: 0 50px;
+.main-container header, 
+.main-container main,
+.main-container footer{
+    width: 100%; /* largeur de 100% pour que les éléments s'adapte à la largeur de l'écran */
+    max-width: 1440px; /* j'ai défini une largeur max */
+    padding: 0 50px; /* marge pour les 4 côtés */
     box-sizing: border-box;
 }
 
-.en-tête { /* J'ai utilisé display:flex; pour aligner mes éléments, la direction, l'espacement et la marge */
-    display: flex; 
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 30px 50px 30px 0px;
+
+/* DEBUT HEADER */
+.en-tête {  
+    display: flex; /* J'ai utilisé display:flex; pour aligner mes éléments */
+    flex-direction: row; /* la direction souhaité */
+    justify-content: space-between; /* l'espacement */
+    padding: 0; /* la marge */
+    align-items: center; /* j'ai centré mes éléments */
 }  
-
-nav a { /* Permet de créer de l'espacement entre les 2 */
-    margin: 60px;
-    margin-right: 0;
+.en-tête nav ul{
+    display: flex; /* alignement des 2 liens */
+    list-style: none; /* j'ai masqué les points de liste */
 }
 
-.en-tête img { /* Permet réduire la taille */
-    height: 19px;
-    width: 61.09px;
+.en-tête nav a { 
+    padding: 10px 0px; /* marge du haut et du bas */
+    display: block; /* occupe la largeur complète */
+    margin: 0 20px; /* permet de créer de l'espacement entre les 2 */
+    border-top: 2px solid transparent;
 }
 
-.pou:hover { /* J'ai créer la bordure, je lui ai mis la couleur au survol et j'ai mis une marge entre la bordure et les liens */
-    border-top: 2px solid #0065FC;
-    color: #0065FC;
-    padding-top: 10px;
+.en-tête nav li:last-child a{
+    margin-right: 0; /* marge du dernier élément a */
+ }
+
+.en-tête img { 
+    height: 19px; /* hauteur du logo */
 }
+
+.en-tête .pou:hover {
+    border-top: 2px solid #0065FC; /* j'ai créer la bordure, je lui ai mis la couleur au survol */
+    color: #0065FC; /* couleur du texte */
+}
+
+/* FIN HEADER */
+
 
 a {
     color: inherit;
@@ -76,21 +92,21 @@ a {
 .euro {
     font-weight: 700;
 }
-
-.pop { /* Pour l'encadrement, ses marges, ses bordures, les ombres, son emplacement */
-    float: left;
-    width: 33.33%;
-    box-sizing: border-box;
-    background-color: white;
-    border-radius: 20px;
-    padding: 5px;
-    margin: 20px;
-    margin-left: 3px;
-    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1)); 
+.hebergement-populaires{
+    padding-bottom: 20px;
 }
 
-.pop img { /* Image ajustée pour couvrir la zone entiére sans déformation (rend l'image net) */
-    object-fit: cover;
+.heb-pop .pop { 
+    box-sizing: border-box; /* Pour l'encadrement pour inclure la bordure et le remplissage dans la largeur et la hauteur spécifiées */
+    background-color: white;
+    border-radius: 20px; /* ses bordures arrondis */
+    padding: 5px;/* ses marges */
+    margin-bottom: 20px;
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1)); /* pour les ombres */
+}
+
+.heb-pop .pop img { 
+    object-fit: cover; /* rend l'image net */
 }
 
 .neutral-star {
@@ -113,40 +129,43 @@ a {
 /****** Hebergements ***********/
 .hebergements {
     width: 65%;
+    display: flex;
+    flex-direction: column;
 }
 
-.heb-pop { /* J'ai effectué un display:grid; pour placer mes conteneur et marge entre mes conteneurs */
-    display: grid;
-    grid-template-columns: 250.33px 250.33px 250.33px;
-    column-gap: 25px;
+.heb-pop { 
+    display: flex; /* j'ai effectué un display:flex; pour aligner mes conteneurs */
+    flex-direction: row; /* disposér horizontalement */
+    flex-wrap: wrap; /* pour le retour à la ligne */
+    justify-content: space-between; /* espacement des conteneurs */   
 }
 
-.heb-pop .pop { /* Largeur des conteneurs */
-    width: 250.33px;   
+.heb-pop .pop { 
+    width: 250.33px; /* Largeur des conteneurs */  
 }
 
-.heb-pop img { /* J'ai éffectué une hauteur, une largeur 100% de la photo qui s'adapte au conteneur et les bordures de la photo */
-    width: 100%;
-    height: 124px;
-    border-radius: 20px 20px 0 0px;
+.heb-pop img { 
+    width: 100%; /* une largeur 100% de la photo qui s'adapte au conteneur */
+    height: 124px; /* j'ai éffectué une hauteur */
+    border-radius: 20px 20px 0 0px; /* et les bordures arrondis de la photo */
 }
 
-.heb-pop .pop-title { /* Taille du titre et ses marges */
-    font-size: 16px;
-    margin: 10px 0px 10px 10px;
+.heb-pop .pop-title { 
+    font-size: 16px;/* taille du titre */
+    margin: 10px 0px 10px 10px; /* marges */ 
 }
 
-.heb-pop .pop-subtitle { /* Marges du paragraphe */
-    margin: 0px 0px 5px 10px;
+.heb-pop .pop-subtitle { 
+    margin: 0px 0px 5px 10px; /* marges du paragraphe */
 }
 
-.heb-pop .pop-rating { /* Marges des étoiles */
-    margin: 0px 0px 5px 10px;
+.heb-pop .pop-rating { 
+    margin: 0px 0px 5px 10px; /* marges des étoiles */
 }
 
-.aff { /* Taille et j'ai mis le texte en gras */
-    font-weight: bold;
-    font-size: 18px;
+.aff { 
+    font-weight: bold; /* taille */
+    font-size: 18px; /* j'ai mis le texte en gras */
 }
 
 /****** Populaires ***********/
@@ -194,166 +213,156 @@ a {
     margin-bottom: 5px;
 }
 
-.milieu { /* Marge qui regroupe h1 jusqu'au logo d'information */
-    padding: 0;
+.milieu { 
+    padding: 0; /* marge qui regroupe h1 jusqu'au logo d'information */
 }
 
-h1 { /* Taille du titre */
-    font-size: 22px;
+h1 { 
+    font-size: 22px; /* taille du titre */
 }
 
-.search { /* Pour le 1ier formulaire */  /* Alignement des mes éléments, sur la même ligne, j'ai mis une hauteur pour le formulaire et une marge */
-    display: flex;
-    flex-direction: row;
-    padding-top: 20px;
-    height: 49px;
+.search { /* Pour le 1ier formulaire */   
+    display: flex; /* alignement des mes éléments */
+    flex-direction: row; /* disposér horizontalement */
+    padding-top: 20px; /* une marge */
 }
 
-input { /* pour le 1ier formulaire */ /* J'ai mis des bordures, j'ai centrer, mis en gras, donner une taille au texte */
-    border: 1px solid #F2F2F2;
-    font-weight: bold;
-    text-align: center;
-    font-size: 18px;
+input { /* pour le 1ier formulaire */
+    border: 1px solid #F2F2F2; /* j'ai mis des bordures */
+    font-weight: bold; /* mis en gras */
+    text-align: center; /* j'ai centrer */
+    font-size: 18px; /* donner une taille au texte */
 }
 
-.rec { /* pour le 1ier formulaire */ /* J'ai mis les bordures, je les ai arrondis, j'ai mis un fond bleu, j'ai mis le texte en gras, en blanc et je lui ai mis sa taille */
-    border: 1px solid #0065FC;
-    border-radius: 0 15px 15px 0;
-    background-color: #0065FC;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
+.rec { /* pour le 1ier formulaire */  
+    border: 1px solid #0065FC; /* j'ai mis les bordures */
+    border-radius: 0 15px 15px 0; /* je les ai arrondis */
+    background-color: #0065FC; /* j'ai mis un fond bleu */
+    color: white; /* en blanc */
+    font-weight: bold; /* j'ai mis le texte en gras */
+    font-size: 18px; /* je lui ai mis sa taille */
     width: 132px; /* largeur du bouton */
 }
 
-.rec:hover { /* Bouton au survol avec un fond bleu clair et le texte en bleu */
-    background-color: #DEEBFF;
-    color: #0065FC;
+.rec:hover {  
+    background-color: #DEEBFF; /* Bouton au survol avec un fond bleu clair */
+    color: #0065FC; /* le texte en bleu */
 }
 
-.icon { /* Pour le 1ier formulaire */ /* J'ai mis une marge pour l'îcone, j'ai mes des bordures arrondis, avec un fond gris clair */
-    padding: 15px;
-    border-radius: 15px 0  0 15px;
-    background-color: #f2f2f2;
+.icon { /* Pour le 1ier formulaire */  
+    padding: 15px; /* J'ai mis une marge pour l'îcone */
+    border-radius: 15px 0  0 15px; /* j'ai mes des bordures arrondis */
+    background-color: #f2f2f2; /* avec un fond gris clair */
 }
 
-.icon2 { /* J'ai caché l'îcone pour le mobil */
-    display: none;
+.icon2 { 
+    display: none; /* j'ai caché l'îcone pour le mobil */
 }
 
-.categories { /* Pour le 2ieme formulaire */ /* J'ai aligné mes éléments, je les ai centré, j'ai mis une marge entre le 1ier et le 2ième formulaire et j'ai espacé les éléments de mon filtres */
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    gap: 15px;
+.categories { /* Pour le 2ieme formulaire */
+    display: flex; /* j'ai aligné mes éléments */
+    align-items: center; /* je les ai centré */
+    margin-top: 20px; /* j'ai mis une marge entre le 1ier et le 2ième formulaire */
 }
 
-.but-pot{ /* Pour le 2ieme formulaire */ /* J'ai mis filtres en gras et je lui ai mis une taille */
-    font-weight: bold;
-    font-size: 18px;
+.but-pot{ /* Pour le 2ieme formulaire */ 
+    font-weight: bold; /* J'ai mis filtres en gras */
+    font-size: 18px; /* je lui ai mis une taille */
 }
 
-.but { /* Pour le 2ieme formulaire */ /* J'ai mis un fond blanc, avec des bordures, je les ai arrondis, j'ai mis des marges à l'intérieur et des marges extèrieur pour espacer mes boutons et j'ai mis une taille, avec le texte en gras */
-    background-color: white;
-    border: 2px solid #d9d9d9;
-    border-radius: 25px;
-    padding: 13px 19px 13px 19px;
+.but { /* Pour le 2ieme formulaire */   
+    background-color: white; /* J'ai mis un fond blanc */
+    border: 2px solid #d9d9d9; /* avec des bordures */
+    border-radius: 25px; /* je les ai arrondis */
+    padding: 13px 19px 13px 19px; /* j'ai mis des marges à l'intérieur et des marges extèrieur pour espacer mes boutons */
     margin: 10px;
-    font-size: 17px;
-    font-weight: bold;    
+    font-size: 17px; /* j'ai mis une taille */
+    font-weight: bold; /* avec le texte en gras */ 
 }
 
-.but:hover { /* Pour le 2ieme formulaire */ /* J'ai mis au survol de mes éléments un fond bleu clair */
-    background-color: #DEEBFF;
+.but:hover { /* Pour le 2ieme formulaire */ 
+    background-color: #DEEBFF; /* J'ai mis au survol de mes éléments un fond bleu clair */
 }
 
 .para { /* Concerne l'îcone et le paragraphe après le 2ième formulaire */
-    display: flex;
-    margin-bottom: 20px;
+    display: flex; /* alignement avec l'îcone */
+    margin-bottom: 20px; /* marge pour espacer le formulaire et "Hébergements à Marseille" */
 }
 
-.para i { /* Pour le logo information */ /* J'ai fais un display:flex; pour par la suite centrer mon îcone, je lui ai mis une largeur, une hauteur, des bordures et je les ai arrondis, je lui ai mis un marge pour le centrer par rapport à mon paragraphe et je lui ai mis une taille */
-    display: flex;
+ .para i {  /* Pour le logo information */  
+    display: flex; /* J'ai fais un display:flex; pour par la suite centrer mon îcone */
     align-items: center;
     justify-content: center;
-    width: 24px; 
-    height: 24px;
-    border: 1px solid #d9d9d9; 
+    width: 24px; /* je lui ai mis une largeur */
+    height: 24px; /* une hauteur */
+    border: 1px solid #d9d9d9; /* des bordures et je les ai arrondis */
     border-radius: 50%;
-    margin-top: 13px;
-    font-size: 12px;
+    margin-top: 13px; /* je lui ai mis un marge pour le centrer par rapport à mon paragraphe */
+    font-size: 12px; /* je lui ai mis une taille */
 }
 
-.para p { /* Pour le paragraphe après le 2ième formulaire */ /* J'ai mis une marge entre mon îcone et mon paragraphe */
-    margin-left: 10px;
+.para p { /* Pour le paragraphe après le 2ième formulaire */ 
+    margin-left: 10px; /* j'ai mis une marge entre mon îcone et mon paragraphe */
 }
 
-.activites { /* Concerne les activités à Marseille */ /* Marge entre le dessus et Activités à Marseille */
-    padding-top: 40px;
+.activites .act-container { 
+    display: flex; /* alignement des mes conteneurs */
 }
 
-.activites .act-container { /* Alignement des mes conteneurs */
-    display: flex;
-}
-
-.activites .act-txt { /* Pour les images et les titre */ /* J'ai mis mes éléments en colonne, j'ai espacé mes conteneurs entre eux et du footer, j'ai mis une hauteur avec une largeur, un fond blanc, des bordures arrondis et des ombres pour mes conteneurs */
-    display: flex;
+.activites .act-txt { /* Pour les images et les titre */ 
+    display: flex; /* J'ai mis mes éléments en colonne */
     flex-direction: column;
-    margin: 15px;
+    margin: 15px; /* j'ai espacé mes conteneurs entre eux et du footer */
     margin-bottom: 60px;
-    width: 297.5px;
+    width: 297.5px; /* j'ai mis une hauteur avec une largeur */
     height: 439px;
-    background-color: white;
-    border-radius: 20px;
-    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+    background-color: white; /* un fond blanc */
+    border-radius: 20px; /* des bordures arrondis */
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1)); /* des ombres pour mes conteneurs */
 }
     
 
 .act-txt .act-img,
-.act-txt .act-img2 { /* Dimension pour les images 1,3,4, j'ai mis une propriété pour rendre les images net et des bordures arrondis */
+.act-txt .act-img2 { /* Dimension pour les images 1,3,4, */  
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-top-right-radius: 20px;
+    object-fit: cover; /* pour rendre les images net */
+    border-top-right-radius: 20px; /* des bordures arrondis */
     border-top-left-radius: 20px;    
 }
 
-.act-txt .act-img2 { /* Dimension pour l'image 2 */
-    height: 89%;  
+.act-txt .act-img2 { 
+    height: 89%; /* Dimension pour l'image 2 */
 }
 
-.activites .act-title { /* Taille et marge pour le h3 */
-    font-size: 16px;
+.activites .act-title { 
+    font-size: 16px; /* taille et marge pour le h3 */
     padding-left: 20px;
 }
 
-.footer-basic { /* J'ai mis un fond gris clair , avec une marge de mes éléments, j'ai une hauteur et une largeur pour mon footer et j'ai mis display:flex; pour aligner mes conteneurs */ 
-   background-color: #F2F2F2;
-   padding: 20px;
-   width: 100%;
+.footer-basic {   
+   background-color: #F2F2F2; /* J'ai mis un fond gris clair */
+   padding: 20px; /* avec une marge de mes éléments */
+   width: 100%; /* j'ai une hauteur et une largeur pour mon footer */
    height: 163px; 
-   display: flex;
+   display: flex; /* j'ai mis display:flex; pour aligner mes conteneurs */ 
 }
 
-.footer-txt h3 { 
-    margin-top: 0;
+.footer-liste  { 
+    list-style-type: none; /* J'ai caché mes listes à point */
+    padding: 0; 
 }
 
-.footer-liste  { /* J'ai caché mes listes à point */
-    list-style-type: none;
-    padding: 0;
+.footer-liste li { 
+    margin-bottom: 15px; /* j'ai mis une marge pour espacer mes éléments */
 }
 
-.footer-liste li { /* J'ai mis une marge pour espacer mes éléments */
-    margin-bottom: 15px;
+.footer-txt a:hover { 
+    border-bottom: 2px solid black; /* j'ai mis au survol une bordure en bas */
 }
 
-.footer-txt a:hover { /* J'ai mis au survol une bordure en bas */
-    border-bottom: 2px solid black;
-}
-
-.footer-txt { /* J'ai mis flex: 1; pour mes conteneur soit répartis équitablement */
-    flex: 1;
+.footer-txt { 
+    flex: 1; /* j'ai mis flex: 1; pour mes conteneur soit répartis équitablement */
 }
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
@@ -365,58 +374,27 @@ input { /* pour le 1ier formulaire */ /* J'ai mis des bordures, j'ai centrer, mi
         flex-direction: column;
     }
 
-    .en-tête nav { /* J'ai ajusté mes liens de navigation à droite */
-        position: relative;
-        left: 300px;
+    .categories { 
+        margin-top: 30px; /* marge pour espacer mon 1ier et mon 2ième formulaire */
+        flex-direction: column; 
+        align-items: flex-start;
     }
 
-    .milieu { /* J'ai mis une largeur pour l'intégralité de ce qui englobe ma div */
-       width: 924px; 
+    .but { 
+        font-size: 16px; /* taille des textes (bouttons) */
+        margin-left: 0; /* marge de 0 pour qu'il n'y ait aucune marge */
     }
 
-    .categories { /* J'ai mis une marge pour rapprocher mon formulaire */
-        margin-top: 0;
+    .para { 
+        margin-top: 10px; /* marge entre mon paragraphe, îcone et mon formulaire */
     }
 
-    .categories .but-txt{ /* J'ai effectué des ajustements des mes bouttons et une marge entre mes boutons et mon paragraphe, îcone */
-        position: relative;
-        top: 60px;
-        right: 90px;
-        margin-bottom: 60px;
+    .hebergements { 
+        width: 100%; /* J'ai mis une largeur pour que s'adapte à la taille de l'écran */
     }
 
-    .but { /* Taille des textes (bouttons) */
-        font-size: 16px;
-    }
-
-    .but-pot { /* Marge pour le label */
-        margin-bottom: 50px;
-    }
-
-    .para { /* marge entre mon paragraphe, îcone et mon formulaire */
-        margin-top: 10px;
-    }
-
-    .hebergements { /* J'ai mis une hauteur et une largeur */
-        width: 924px;
-        height: 611.5px;
-    }
-
-    .heb-pop { /* J'ai effectué un display:grid; pour les placer, j'ai donné de l'espace */
-        display: grid;
-        grid-template-columns: 290px 290px 290px;
-        grid-template-rows: 230px 230px 230px;
-        column-gap: 5px;
-        row-gap: 20px;
-    }
-
-    .heb-pop .pop { /* J'ai mis une largeur à mes conteneurs */
-        width: 268px;
-    }
-
-    .aff { /* J'ai effectué des ajustements du titre, pour qu'il soit décalé par rapport à sa position initial */
-        position: relative;
-        left: 0;
+    .heb-pop a{ 
+        width: 30%; /* largeur pour mes encadrements */
     }
 
     .populaires {
@@ -442,217 +420,191 @@ input { /* pour le 1ier formulaire */ /* J'ai mis des bordures, j'ai centrer, mi
         font-size: 13px;
     }
 
-    .act { /* Pour les activité à Marseille (pour la taille du titre) */
-        font-size: 22px;
+    .act { /* Pour les activité à Marseille */
+        font-size: 22px; /* pour la taille du titre */
     }
 
-    .activites { /* Pour aligner les conteneurs,les adapter à la taille de l'écran et les marges */
-        display: flex;
+    .activites { 
+        display: flex; /* Pour aligner les conteneurs */
         flex-wrap: wrap;
-        width: 924px;
-        height: 390.02px;
-        padding-right: 30px;
-        margin-bottom: 90px;
+        width: 100%; /* les adapter à la taille de l'écran */
     }
 
-    .act-container .act-txt { /* Largeur et hauteurs des blocs */
-        width: 193.5px;
+    .act-container .act-txt { 
+        width: 193.5px; /* largeur et hauteurs des blocs */
         height: 270px;
     }
 
-    .act-txt .act-img2 { /* Hauteur de l'image 2 */
-        height: 200px;
+    .act-txt .act-img2 { 
+        height: 200px; /* hauteur de l'image 2 */
     }
 
-    .act-txt .act-img { /* Hauteur de l'image 1 */
-        height: 200px;
-    }
-
-    .footer { /* Adapter le pied-de-page à la taille de l'écran */
-        width: 924px;
-        height: 163px;
-    }
-
-    .footer-basic { /* Espacement des éléments */
-       gap: 30px;
+    .act-txt .act-img { 
+        height: 200px; /* hauteur de l'image 1 */
     }
 }
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
-
-    .en-tête { /* Hauteur et largeur de mon en-tête */
-        width: 375px;
-        height: 115px;
+    .main-container header{
+        padding-left: 0;
+    }
+    .main-container footer,
+    .main-container .milieu {
+        padding-left: 30px;
+    }
+    .en-tête { 
+        width: 100%; /* largeur de mon en-tête */
+        flex-direction: column; /* mis en colonne */
+        padding-top: 20px; 
     }
 
-    .en-tête nav { /* Alignement de mes liens de navigations, ajustement, espacement de mes liens et j'ai mis une bordure en bas avec une largeur */
-        display: flex;
-        position: absolute;
-        left: 45px;
-        gap: 70px;
-        border-bottom: 2px solid #F2F2F2;
-        width: 420px;
+    .en-tête nav {
+        width: 100%; /* largeur pour que les liens s'étendent à la largeur de l'écran */
+    }
+   
+    .en-tête nav ul li{
+        display: flex; /* j'ai rendu mes liens flex pour pouvoir leur mettent une largeur de 100% pour qu'il s'adapte à la largeur */
+        width: 100%;
     }
 
     .en-tête .pou { /* Marge pour rapprocher ma bordure et j'ai caché la bordure du haut adapté pour l'ordinateur et la tablette */
-        margin-bottom: 20px;
-        border-top: none;
+        padding: 20px; /* marge entre le logo et les liens */
+        width: 100%; /* largeur de 100% pour la bordure s'adapte à la taille de l'écran */
+        text-align: center; /* alignement des liens */
+        margin: 0; /* marge de 0 pour que les bordures se collent */
+        border-bottom: 2px solid #F2F2F2; /* bordure en bas gris clair */
+    }
+    
+    .en-tête .pou:hover{
+        border-top: none; /* j'ai masqué la bordure d'en haut au survol pour l'odinateur et la tablette */
+        border-bottom: 2px solid #0065FC; /* bordure bleu foncé */
     }
 
-    .en-tête .logo { /* Ajustement du logo */
-        position: relative;
-        left: 180px;
+
+    .milieu { 
+        width: 335px; /* j'ai mis une largeur */
     }
 
-    .milieu { /* J'ai mis une largeur et une marge pour tous les éléments se trouvant dans cette div */
-        width: 335px;
-        padding-left: 30px;
+    .rec { 
+        display: none; /* j'ai cacher le boutton qui était pour le desktop et la tablette */
     }
 
-    .rec { /* J'ai cacher le boutton qui était pour le desktop et la tablette */
-        display: none;
+    input { 
+        width: 100%; /* largeur de mon input */
+        border-right: none; /* j'ai enlever la bordure à droite pour que mon bouton se fonde avec mon input */
+        text-align: start; /* j'ai placé mon texte au debut */
+        padding-left: 20px; /* je l'ai espacé de la bordure */
     }
 
-    input { /* largeur de mon input, j'ai enlever la bordure à droite pour que mon bouton se fonde avec mon input, j'ai placé mon texte au debut et je l'ai espacé de la bordure */
-        width: 335px;
-        border-right: none;
-        text-align: start;
-        padding-left: 20px;
-    }
-
-    .icon2 { /* Je lui ai mis des bordures, avec des arrondis, avec un bleu foncé, avec une largeur et j'ai ajuster sa position */
-        display: inline-block; /* Pour que le bouton occupe tout la largeur disponible sur la même ligne que les autres éléments */
-        border: 1px solid #0065FC;
-        background-color: #0065FC;
+    .icon2 {  
+        display: flex; /* j'ai fais un display:felx; pour placer mon icône au centre de l'encadrement */
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #0065FC; /* Je lui ai mis des bordures, avec des arrondis */
         border-radius: 15px;
-        width: 20%;
-        position: relative;
-        right: 10px;
+        background-color: #0065FC; /* avec un bleu foncé */
+        width: 20%; /* avec une largeur */
+        position: relative; /* j'ai ajuster sa position */
+        right: 11px;
     }
 
-    .fa-magnifying-glass { /* J'ai mis une couleur et taille large à l'îcone */
-        color: white;
+    .fa-magnifying-glass { 
+        color: white; /* j'ai mis une couleur et taille large à l'îcone */
         font-size: large;
     }
 
-    .icon { /* Marge pour l'îcone */
-        padding-top: 15px;
+    .categories .but-txt { 
+        flex-wrap: wrap; /* pour que mes boutons aillent à la ligne */
     }
 
-    .but-txt { /* J'ai effectué un display:grid; pour donner à mon formulaire le nombre de colonne et le nombre de rangé à avoir */
-        display: grid;
-        grid-template-columns: 170px 170px;
-        grid-template-rows: 70px 70px;
-        padding-left: 10px; /* + une marge */
+    .categories .but-pot { 
+        padding-bottom: 10px; /* j'ai mis une marge entre filtres et mes boutons */
     }
 
-    .but-pot { /* J'ai mis une marge entre filtres et mes boutons */
-        padding-bottom: 80px;
+    .categories .but { 
+        font-size: 14px; /* taille du texte des boutons */
+        width: 44%; /* largeur des boutons */
     }
 
-    .but { /* Taille du texte des boutons */
-        font-size: 14px;
+    .para { 
+        align-items: center; /* j'ai centré mon logo et de paragaphe */
     }
 
-    .para { /* Hauteur et longueur de ma div .para */
-        height: 38px;
-        width: 345px;
+    .para i { 
+        margin: 0; /* j'ai mis une marge de 0 pour que mon îcone n'est pas de marge */
     }
 
-    .para i { /* Ajustement de l'emplacement de l'îcone */
-        position: relative;
-        top: 7px;
+    .hebergements-and-populaires { 
+        flex-direction: column-reverse; /* pour inverser "les plus populaires" avec "Hébergements à Marseille" */
     }
 
-    .hebergements-and-populaires { /* Pour inverser "les plus populaires" avec "Hébergements à Marseille" */
-        flex-direction: column-reverse;
-        padding-bottom: 40px;
+    .hebergements-and-populaires .populaires { 
+        border-radius: 0; /* J'ai mis les bordures à 0 pour avoir aucun arrondis */
+        margin-top: 20px; /* marge entre le pragraphe, l'îcone et mon "Les plus populaires */
     }
 
-    .hebergements-and-populaires .populaires { /* J'ai mis les bordures à 0 pour avoir aucun arrondis et une largeur avec une hauteur */
-        border-radius: 0;
-        width: 390px;
-        height: 580px;
+    .hebergements-and-populaires .hebergements { et ajouté une hauteur avec une largeur */
+        background-color: transparent; /* J'ai mis en transparence pour le fond */
     }
 
-    .hebergements-and-populaires .hebergements { /* J'ai mis en transparence le fond et ajouté une hauteur avec une largeur */
-        background-color: transparent;
-        width: 375px;
-        height: 1435.5px; 
-    }
-
-    .populaires-cards { /* Pour placer mes éléments */
-        display: flex;
+    .populaires-cards { 
+        display: flex;/* pour placer mes éléments en colonne */
         flex-direction: column;
     }
 
-    .populaires-cards .card { /* Pour l'encadrement et marge entre les éléments */
-        width: 335px;
-        height: 146px;
-        margin-top: 15px;
+    .populaires-cards .card {   
+        width: 335px; /* largeur pour l'encadrement */
+        margin-top: 15px; /* marge entre les éléments */
     }
 
-    .card img { /* Hauteur des images */
-        height: 144px;
-    }
-
-    .heb-pop { /* Pour placer mes conteneur en colonnes */
-        display: flex;
+    .heb-pop {
+        display: flex; /* pour placer mes conteneur en colonnes */
         flex-direction: column;  
     }
 
-    .heb-pop .pop { /* Largeur, hauteur des conteneurs + marge à 0 entre mes conteneurs */
-       width: 335px;
-       height: 207.25px;
-       margin-bottom: 0;
-       margin-top: 0;
+    .heb-pop .pop {
+        width: 335px; /* largeur de mes conteneurs */
     }
 
-    .heb-pop .pop-title { /* Marge pour le titre */
-        margin-top: 5px;
+    .heb-pop .pop-title { 
+        margin-top: 5px;/* marge pour le titre */
     }
 
-    .section-title { /* Marge en dessous de mon titre */
-        margin-bottom: 10px;
-    }
-   
-    .aff { /* Ajustement du paragraphe */
-        position: relative;
-        left: 3px;
+    .activites { 
+        padding: 25px; /* Largeur de l'ensemble des éléments */
     }
 
-    .activites { /* Largeur et hauteur de l'ensemble des éléments + une marge à gauche pour un meilleur rendu */
-       width: 375px;
-       height: 965.02px;
-       padding-left: 30px;
-    }
-
-    .act-container { /* J'ai mis mes conteneurs en colonne */
-        display: flex;
+    .act-container { 
+        display: flex; /* J'ai mis mes conteneurs en colonne */
         flex-direction: column;
     }
 
-    .act-container .act-txt { /* J'ai mis une largeur et une hauteur pour mes conteneur ainsi qu'une marge*/
-        width: 315px;
-        height: 200px;
-        margin-bottom: 2px;
+    .act-container .act-txt {  
+        width: 315px; /* J'ai mis une largeur */
+        height: auto; /* une hauteur pour mes conteneur en auto pour que sa s'adapte */
+        margin-bottom: 0; 
     }
 
-    .act-txt .act-img { /* Hauteur pour l'image */
-        height: 141px;
+    .act-txt .act-img { 
+        height: 141px; /* hauteur pour l'image */
     }
 
-    .act-txt .act-img2 { /* Hauteur pour l'image */
-        height: 141px;
+    .act-txt .act-img2 {
+        height: 141px; /* hauteur pour l'image */
     }
 
-    .footer-basic { /* Hauteur et largeur pour mon footer et une direction en colonne ainsi qu'une marge pour mes conteneurs */
-        width: 375px;
-        height: 461px;
-        display: flex;
+    .footer-basic {   
+        width: 100%;/* hauteur et largeur pour mon footer */
+        height: 100%;
+        margin-top: 40px; /* marge entre mes "Activités à Marseille" et mon footer */
+        display: flex; /* une direction en colonne */
         flex-direction: column;
-        padding: 30px;
+        gap: 15px; /* ainsi qu'une marge pour mes conteneurs */
+    }
+
+    .footer-txt {
+        padding-left: 50px; /* marge entre le côté gauche et mes éléments */
     }
 
 } 
