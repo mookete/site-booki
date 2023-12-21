@@ -304,6 +304,18 @@ input { /* pour le 1ier formulaire */
     margin-left: 10px; /* j'ai mis une marge entre mon îcone et mon paragraphe */
 }
 
+.activites { 
+    padding-top: 50px; /* marge entre "Hébergements à Marseille" et "Activités à Marseille" */
+}
+
+.activites .act {
+    margin-left: 15px; /* marge pour mon titre */
+}
+
+.activites .activite {
+    font-size: 22px; /* taille du titre */
+}
+
 .activites .act-container { 
     display: flex; /* alignement des mes conteneurs */
 }
@@ -572,11 +584,7 @@ nav .footer-liste a:hover {
     }
 
     .activites { /* marge pour mes éléments activites */
-        padding: 15px;
-    }
-
-    .activites .act { /* marge pour le h2 */
-        padding: 10px;
+        padding: 25px;
     }
 
     .act-container { 
