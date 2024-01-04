@@ -380,6 +380,11 @@ nav .footer-liste a:hover {
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
 
+    .main-container {
+        width: 100%;
+        max-width: 1024px;
+    }
+
     .hebergements-and-populaires {
         flex-direction: column;
     }
@@ -405,6 +410,10 @@ nav .footer-liste a:hover {
 
     .heb-pop a{ 
         width: 30%; /* largeur pour mes encadrements */
+    }
+
+    .heb-pop .pop {
+        width: 100%;
     }
 
     .populaires {
@@ -436,13 +445,22 @@ nav .footer-liste a:hover {
 
     .activites { 
         display: flex; /* Pour aligner les conteneurs */
-        flex-wrap: wrap;
         width: 100%; /* les adapter à la taille de l'écran */
+        flex-direction: column; /* pour mettre mes éléments en dessous du titre */
+    }
+
+    .activites .act-container {
+        width: 100%;
     }
 
     .act-container .act-txt { 
-        width: 193.5px; /* largeur et hauteurs des blocs */
+        width: 100%; /* largeur et hauteurs des blocs */
         height: 270px;
+    }
+
+    .act-container a {
+        width: 100%;
+        display: flex;
     }
 
     .act-txt .act-img2 { 
@@ -457,12 +475,10 @@ nav .footer-liste a:hover {
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
 
-    .main-container header {
+    .main-container header,
+    .main-container main,
+    .main-container footer {
         padding: 0; 
-    }
-
-    .main-container .milieu {
-        padding-left: 30px;
     }
 
     .en-tête { 
@@ -473,6 +489,10 @@ nav .footer-liste a:hover {
 
     .en-tête nav {
         width: 100%; /* largeur pour que les liens s'étendent à la largeur de l'écran */
+    }
+
+    .en-tête nav ul {
+        padding: 0;
     }
    
     .en-tête nav ul li{
@@ -493,9 +513,8 @@ nav .footer-liste a:hover {
         border-bottom: 2px solid #0065FC; /* bordure bleu foncé */
     }
 
-
     .milieu { 
-        width: 335px; /* j'ai mis une largeur */
+        width: 100%; /* j'ai mis une largeur */
     }
 
     .rec { 
@@ -503,7 +522,7 @@ nav .footer-liste a:hover {
     }
 
     input { 
-        width: 100%; /* largeur de mon input */
+        width: 65%; /* largeur de mon input */
         border-right: none; /* j'ai enlevé la bordure à droite pour que mon bouton se fonde avec mon input */
         text-align: start; /* j'ai placé mon texte au début */
         padding-left: 20px; /* je l'ai espacé de la bordure */
@@ -516,7 +535,7 @@ nav .footer-liste a:hover {
         border: 1px solid #0065FC; /* Je lui ai mis des bordures, avec des arrondis */
         border-radius: 15px;
         background-color: #0065FC; /* avec un bleu foncé */
-        width: 20%; /* avec une largeur */
+        width: 11%; /* avec une largeur */
         position: relative; /* j'ai ajuster sa position */
         right: 11px;
     }
@@ -558,6 +577,7 @@ nav .footer-liste a:hover {
 
     .hebergements-and-populaires .hebergements { 
         background-color: transparent; /* J'ai mis en transparence pour le fond */
+        padding: 28px; /* marge pour l'ensemble de mon "Hébergement à Marseille */
     }
 
     .populaires-cards { 
@@ -565,8 +585,11 @@ nav .footer-liste a:hover {
         flex-direction: column;
     }
 
+    .populaires-cards a {
+        width: 100%;
+    }
+
     .populaires-cards .card {   
-        width: 335px; /* largeur pour l'encadrement */
         margin-top: 15px; /* marge entre les éléments */
     }
 
@@ -575,27 +598,26 @@ nav .footer-liste a:hover {
         flex-direction: column;  
     }
 
-    .heb-pop .pop {
-        width: 335px; /* largeur de mes conteneurs */
+    .heb-pop a {
+        width: 100%; /* largeur de mes conteneurs */
     }
 
     .heb-pop .pop-title { 
         margin-top: 5px; /* marge pour le titre */
     }
 
-    .activites { /* marge pour mes éléments activites */
-        padding: 25px;
+    .activites {
+        padding: 20px;
     }
 
     .act-container { 
-        display: flex; /* J'ai mis mes conteneurs en colonne */
-        flex-direction: column;
+        flex-direction: column;/* J'ai mis mes conteneurs en colonne */
     }
 
     .act-container .act-txt {  
-        width: 315px; /* J'ai mis une largeur */
         height: auto; /* une hauteur pour mes conteneurs en auto pour qu'ils s'adaptent */
-        margin-bottom: 0; 
+        margin-bottom: 0;
+        width: 82%; /* largeur pour mes conteneurs */ 
     }
 
     .act-txt .act-img { 
@@ -611,6 +633,7 @@ nav .footer-liste a:hover {
         display: flex; /* une direction en colonne */
         flex-direction: column;
         gap: 50px; /* ainsi qu'une marge pour mes conteneurs */
+        width: 100%; /* s'adapte à la largeur de l'écran */
     }
 
     .footer-txt {
